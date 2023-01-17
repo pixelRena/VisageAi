@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "engine": {
     "npm": "9.2.0",
-    "node": "16.16.0"
+    "node": "v16.16.0"
   },
   "description": "Application to analyze images and detect faces",
   "main": "index.js",
   "scripts": {
-    "start": "cd ./frontend && npm install && npm run build && cd ../backend && npm install && npm start",
+    "build": "cd ./backend && npm install && cd ../frontend && npm install && npm run build",
+    "start": "cd ./backend && npm start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
