@@ -1,0 +1,16 @@
+{
+  "name": "face-recognition",
+  "version": "1.0.0",
+  "engine": {
+    "npm": "9.2.0",
+    "node": "16.16.0"
+  },
+  "description": "Application to analyze images and detect faces",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd ./frontend && npm run build && cd ../backend && npm start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
