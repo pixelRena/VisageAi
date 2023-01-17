@@ -2,6 +2,10 @@
   "name": "smartbrain-app-api",
   "version": "0.1.0",
   "private": true,
+  "engine": {
+    "npm": "9.2.0",
+    "node": "v16.16.0"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
