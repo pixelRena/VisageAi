@@ -3,11 +3,9 @@
   <p align="center">
     Want to know how many people were in that picture you took at the party? This application, built with ReactJS and created taking the ZTM Academy course, allows you to copy your image URL's and upload them to see the works or technology and what it can do! It captures multiple faces. Integrated with PSQL, requiring the user to register in order to scan images.
     <br />
-    <a href="https://jsxneko-face-recognition.herokuapp.com/">View Demo</a>
+    <a href="https://clarifai-model-detector.herokuapp.com/">View Demo</a>
     ·
     <a href="https://github.com/pixelRena/facial-recognition-app/issues">Report Bug</a>
-    .
-    <a href="https://github.com/pixelRena/face-recognition-api">Server Source Code<a/>
   </p>
   
 </div>
@@ -25,10 +23,12 @@ Password: supergame2000
 
 :)
 
+<strong>UPDATE: Login/Register is not working at the moment. It is a work in progress!</strong>
+
 ## Contact
 Developer: Serena - [@pixelRena](https://twitter.com/pixelRena)<br>
 
-Project Link: [https://github.com/pixelRena/rt-fitness](https://github.com/pixelRena/facial-recognition-app)
+Project Link: [https://github.com/pixelRena/Clarifai-Model-Detection](https://github.com/pixelRena/Clarifai-Model-Detection)
 
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
