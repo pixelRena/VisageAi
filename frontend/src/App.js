@@ -81,13 +81,19 @@ class App extends Component {
 			headers: {'Content-Type':'application/json'},
 			body: JSON.stringify({input: this.state.input})
 		})
-		.then(res => res.json())
 		.then(res => {
-			this.displayFaceBox(this.calculateFaceLocation(res))
+			if(res.status === 500) {
+				throw new Error("Clarifai is down");
+			} else if (res.status === 400) {
+				return res.json().then(error => {
+					throw new Error(error);
+				});
+			}
+			return res.json();
 		})
+		.then(res => this.displayFaceBox(this.calculateFaceLocation(res)))
 		.catch(err => {
 			this.setState({displayAlert: true});
-
 			// Displays alert message based on conditions met
 			if(!this.state.input.length)  {
 				this.setState({
@@ -95,7 +101,7 @@ class App extends Component {
 				});
 			} else {
 				this.setState({
-					alertMessage: "Uh Oh. Something went wrong. Ensure that the url contains a image type extension"
+					alertMessage: err.message
 				});
 			}
 
