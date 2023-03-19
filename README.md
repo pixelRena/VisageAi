@@ -1,6 +1,6 @@
 <div align="center">
 
-<h2 align="center">Clarifai Model Detection</h2>
+<h2 align="center">Visage AI</h2>
   <p align="center">
     CMD uses React and Clarifai API to detect multiple faces provided from the URL of a photo.
     <br />
