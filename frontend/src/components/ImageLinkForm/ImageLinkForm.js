@@ -26,7 +26,7 @@ const ImageLinkForm = ({ onInputChange, onImageSubmit }) => {
 			</Row>
 			<Row className='center'>
 				<InputGroup className='w-100 center'>
-					<Form.Control onChange={onInputChange} value="https://www.snexplores.org/wp-content/uploads/2022/08/1440_face_mites_feat.jpg"/>
+					<Form.Control onChange={onInputChange}/>
 					<Button variant="primary" size="md" type="submit" onClick={onImageSubmit}>Detect</Button>
 				</InputGroup>
 			</Row>
