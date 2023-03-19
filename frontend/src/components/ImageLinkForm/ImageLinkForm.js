@@ -1,7 +1,7 @@
 // This is the form on the homepage after logging in or registering
 // Where the user can enter a URL into the input field
 import React from 'react';
-import Button from "react-bootstrap/button";
+import Button from "react-bootstrap/Button";
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Row from "react-bootstrap/Row";
