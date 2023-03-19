@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
 import './App.css';
-import Navigation from './components/Navigation/navigation';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
-import Rank from './components/Rank/rank';
 import FaceRecognition from './components/FaceRecognition/faceRecognition';
 import SignIn from './components/SignIn/signIn';
 import Register from './components/Register/register';
 import Profile from './components/Profile/profile';
-import ParticlesBox from "./components/Particles/particles";
 import Footer from './components/Footer/footer';
 import {alertMe} from './components/Alert/alertBox';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const initialState = {
 		input: '',
@@ -76,26 +76,13 @@ class App extends Component {
 	onImageSubmit = () => {
 		// send the information gathered from the calculation and the input
 		this.setState({imageUrl: this.state.input})
-		fetch('/imageurl', {
+		fetch('http://localhost:3001/imageurl', {
 			method: 'POST',
 			headers: {'Content-Type':'application/json'},
 			body: JSON.stringify({input: this.state.input})
 		})
 		.then(res => res.json())
 		.then(res => {
-			// if(res) {
-			// 	fetch('/image', {
-			// 		method: 'PUT',
-			// 		headers: {'Content-Type':'application/json'},
-			// 		body: JSON.stringify({
-			// 			id: this.state.user.id
-			// 		})
-			// 	})
-			// 	.then(res => res.json())
-			// 	.then(count => {
-			// 		this.setState(Object.assign(this.state.user, {entries:count}))
-			// 	})
-			// }
 			this.displayFaceBox(this.calculateFaceLocation(res)
 		)})
 		.catch(err => {
@@ -123,43 +110,25 @@ class App extends Component {
 		// Return render based on if the user is signed in and/or going to a different route
 		const {isSignedIn, imageUrl, route, box } = this.state;
 		return (
-				<div className="App">
-				{/* <Navigation onRouteChange={this.onRouteChange} isSignedIn={isSignedIn} /> */}
-				<ParticlesBox />
-				{ 
-					route === 'home' ?
-						<div>
-							{/* <Rank name={this.state.user.name} entries={this.state.user.entries}/> */}
-							<ImageLinkForm onInputChange={this.onInputChange} onImageSubmit={this.onImageSubmit}/>
-							<FaceRecognition box={box} imageUrl={imageUrl}/>
-						</div>
-					: 
-						(
-							route === 'profile' ?
-							<div>
-								<Profile loadUser={this.loadUser} user={this.state.user} onRouteChange={this.onRouteChange}/>
-								<Footer />
-							</div>
-							:
-							(route === 'register' ? 
-								<div>
-									<Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
-									<Footer />
-								</div>
-								:
-								<div>
-									<SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
-									<Footer />
-								</div>
-							)
-						)    
-				}
+				<Container className="d-flex align-items-center justify-content-center center text-center"
+				style={{height:"100vh"}}>
+				<Row className="d-flex bg-white p-5 h-75 w-100">
+					<Col>
+						<FaceRecognition box={box} imageUrl={imageUrl}/>
+					</Col>
+					<Col sm="1">
+						<div className="vr h-100"></div>
+					</Col>
+					<Col>
+						<ImageLinkForm onInputChange={this.onInputChange} onImageSubmit={this.onImageSubmit}/>
+					</Col>
+				</Row>
 				<div className='alertBox' style={{display:'none'}}>
 					<div className="pa3 bg-black ba b--white">
 						<span className='alert-text white'></span>
 					</div>
 				</div>
-			</div>
+			</Container>
 		);
 	}
 }
