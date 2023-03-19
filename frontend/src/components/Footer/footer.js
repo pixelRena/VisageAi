@@ -6,6 +6,7 @@ const Footer = () => {
 		<div id='footer'>
 			<p className="text-uppercase link">© <a 
 				className="text-dark"
+				target="_blank"
 				href='https://github.com/pixelRena/Clarifai-Model-Detection'
 				style={{'textDecoration':'none'}}>
 				pixelRena/@github</a> 

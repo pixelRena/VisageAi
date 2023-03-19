@@ -108,10 +108,10 @@ class App extends Component {
 		// Return render based on if the user is signed in and/or going to a different route
 		const { imageUrl, box } = this.state;
 		return (
-			<Container className="d-flex align-items-center justify-content-center center text-center"
-			style={{height:"100vh"}}>
+			<Container className="d-flex flex-column justify-content-around align-items-center justify-content-center center text-center min-vh-100"
+			>
 				<Navigation/>
-				<Row className="shadow d-flex bg-white p-5 h-md-75 w-100">
+				<Row className="row-container shadow d-flex bg-white p-5 h-md-75 w-100">
 					<Col className="bg-secondary bg-opacity-25">
 						<FaceRecognition box={box} imageUrl={imageUrl}/>
 					</Col>
@@ -122,6 +122,7 @@ class App extends Component {
 						<ImageLinkForm onInputChange={this.onInputChange} onImageSubmit={this.onImageSubmit}/>
 					</Col>
 				</Row>
+
 				<Footer/>
 
 				<div className='alertBox' style={{display:'none'}}>

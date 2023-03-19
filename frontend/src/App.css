@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
-body { box-sizing: border-box; }
-
-.container { font-family: 'Share Tech Mono', monospace; }
+.container { 
+  font-family: 'Share Tech Mono', monospace;
+}
 
 .alertBox {
   z-index: 99;
@@ -15,8 +15,11 @@ body { box-sizing: border-box; }
   width: 70vw;
 }
 
-@media (max-width: 800px){
+@media screen and (max-width: 767px){
   .Modal {
     width:90%;
+  }
+  .row-container {
+    margin-top: 5px !important;
   }
 }
