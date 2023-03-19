@@ -5,6 +5,8 @@
 .alertBox {
   z-index: 99;
   position: fixed;
+  color: white;
+  padding: 25px;
   transform: translateX(-50%);
   top: 20%;
   left: 50%;
