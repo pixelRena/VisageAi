@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Application to analyze images and detect faces",
   "main": "index.js",
+  "engines": {
+    "node": "18.14.0",
+    "npm": "9.2.0"
+  },
   "scripts": {
     "build": "cd ./backend && npm install && cd ../frontend && npm install && npm run build",
     "start": "cd ./backend && npm start",
