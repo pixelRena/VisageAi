@@ -35,6 +35,7 @@ const ImageLinkForm = ({ onInputChange, onImageSubmit }) => {
 				<p>Make sure the url you pasted ends with a image file type such as: <span className="text-primary fw-bold">.jpg, .png, etc</span></p>
 				<p className="fs-6 fw-medium fst-italic form-text">Still not working?</p>
 				<p>Please submit a <a href="https://github.com/pixelRena/Clarifai-Model-Detection/issues" className="text-primary text-underline fw-bold">issue</a> request and the url you tried to use so that I can further troubleshoot. Thanks! 😊</p>
+				<a href="https://status.clarifai.com/" target="_blank" rel="noopener noreferrer" className="text-center">Clarifai Server Status</a>
 			</Row>
 		</div>
 		);
