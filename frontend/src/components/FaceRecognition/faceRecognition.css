@@ -1,3 +1,9 @@
+#bounding-container {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
 .bounding-box {
 	position: absolute;
 	box-shadow: 0 0 0 3px pink inset;
@@ -5,5 +11,8 @@
 	flex-wrap: wrap;
 	justify-content: center;
 	cursor: pointer;
+}
 
+.bounding-box:hover {
+	background: rgba(255, 203, 203, 0.284);
 }

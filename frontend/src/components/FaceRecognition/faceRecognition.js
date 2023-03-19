@@ -3,16 +3,15 @@ import './faceRecognition.css';
 
 const faceRecognition = ({ box, imageUrl }) => {
 	return (
-		<div className='center ma'>
-			<div className='absolute mt2 bt bw2 b--white-80'>
-				<img id='input-image' src={imageUrl} width='500' height='auto' alt=''/>
+			<div id="bounding-container">
+				<img id='input-image' src={imageUrl} style={{width: "100%"}} alt=""/>
 				{
-					// map all the boxes or faces found
+					// Loops the boxes found and will bind them to a face of the image
 					box.map((boxArea,i) => {
 						return (
 							<div
 								className='bounding-box'
-								key = {i}
+								key={i}
 								// loop the boxes found and give them their respective values
 								// style will then form a box with the values given from clarafai api
 								style={{
@@ -27,7 +26,6 @@ const faceRecognition = ({ box, imageUrl }) => {
 				}
 			</div>
 			
-		</div>
 		);
 }
 
