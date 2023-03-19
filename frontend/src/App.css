@@ -4,17 +4,6 @@
   font-family: 'Share Tech Mono', monospace;
 }
 
-.alertBox {
-  z-index: 99;
-  position: fixed;
-  color: white;
-  padding: 25px;
-  transform: translateX(-50%);
-  top: 20%;
-  left: 50%;
-  width: 70vw;
-}
-
 @media screen and (max-width: 767px){
   .Modal {
     width:90%;

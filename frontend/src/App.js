@@ -3,7 +3,7 @@ import './App.css';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import FaceRecognition from './components/FaceRecognition/faceRecognition';
 import Footer from './components/Footer/footer';
-import {alertMe} from './components/Alert/alertBox';
+import AlertBox from './components/Alert/alertBox';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -11,6 +11,8 @@ import Navigation from "./components/Navigation/navigation";
 
 const initialState = {
 		input: '',
+		displayAlert: false,
+		alertMessage: '',
 		imageUrl: '',
 		box: [],
 		route: 'home',
@@ -74,18 +76,36 @@ class App extends Component {
 	onImageSubmit = () => {
 		// send the information gathered from the calculation and the input
 		this.setState({imageUrl: this.state.input})
-		fetch('/imageurl', {
+		fetch('http://localhost:3001/imageurl', {
 			method: 'POST',
 			headers: {'Content-Type':'application/json'},
 			body: JSON.stringify({input: this.state.input})
 		})
 		.then(res => res.json())
 		.then(res => {
-			this.displayFaceBox(this.calculateFaceLocation(res)
-		)})
+			this.displayFaceBox(this.calculateFaceLocation(res))
+		})
 		.catch(err => {
-			if(!this.state.input.length)  return alertMe('Before we can detect faces for you. You must provide a URL to an image.')
-			console.log(err)
+			this.setState({displayAlert: true});
+
+			// Displays alert message based on conditions met
+			if(!this.state.input.length)  {
+				this.setState({
+					alertMessage: "Before we can detect faces for you. You must provide a URL to an image"
+				});
+			} else {
+				this.setState({
+					alertMessage: "Uh Oh. Something went wrong. Ensure that the url contains a image type extension"
+				});
+			}
+
+			// Resets alert display and message back to default state
+			setTimeout(() => {
+				this.setState({
+					displayAlert: false,
+					alertMessage: ""
+				});
+			}, 3000);
 		})
 	}
 
@@ -106,7 +126,7 @@ class App extends Component {
 
 	render() {
 		// Return render based on if the user is signed in and/or going to a different route
-		const { imageUrl, box } = this.state;
+		const { imageUrl, box, displayAlert } = this.state;
 		return (
 			<Container className="d-flex flex-column justify-content-around align-items-center justify-content-center center text-center min-vh-100"
 			>
@@ -122,14 +142,8 @@ class App extends Component {
 						<ImageLinkForm onInputChange={this.onInputChange} onImageSubmit={this.onImageSubmit}/>
 					</Col>
 				</Row>
-
 				<Footer/>
-
-				<div className='alertBox' style={{display:'none'}}>
-					<div>
-						<span className='alert-text'></span>
-					</div>
-				</div>
+				<AlertBox displayAlert={displayAlert}>{this.state.alertMessage}</AlertBox>
 			</Container>
 		);
 	}

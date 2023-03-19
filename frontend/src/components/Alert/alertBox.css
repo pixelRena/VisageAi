@@ -1,0 +1,12 @@
+.alertBox {
+    z-index: 99;
+    position: fixed;
+    background: rgb(25, 25, 25);
+    border: 3px solid rgb(36, 184, 243);
+    color: rgb(235, 235, 235);
+    padding: 15px;
+    transform: translateX(-50%);
+    top: 10%;
+    left: 50%;
+    width: 70vw;
+}

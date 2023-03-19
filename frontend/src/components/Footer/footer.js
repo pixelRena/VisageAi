@@ -7,6 +7,7 @@ const Footer = () => {
 			<p className="text-uppercase link">© <a 
 				className="text-dark"
 				target="_blank"
+				rel="noopener noreferrer"
 				href='https://github.com/pixelRena/Clarifai-Model-Detection'
 				style={{'textDecoration':'none'}}>
 				pixelRena/@github</a> 
