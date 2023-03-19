@@ -46,8 +46,6 @@ app.put('/image', (req,res) => {image.handleEntries(req, res, db)})
 
 app.post('/imageurl', (req,res) => {image.handleApiCall(req, res, process.env.CLARIFAIAPI)})
 
-// app.get('/', (req,res) => {res.send('HOSTING')})
-
 app.get('*', (req,res) => {
   res.sendFile(path.join(buildPath, 'index.html'));
 })
