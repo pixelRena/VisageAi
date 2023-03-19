@@ -112,8 +112,8 @@ class App extends Component {
 		return (
 				<Container className="d-flex align-items-center justify-content-center center text-center"
 				style={{height:"100vh"}}>
-				<Row className="d-flex bg-white p-5 h-75 w-100">
-					<Col>
+				<Row className="shadow d-flex bg-white p-5 h-75 w-100">
+					<Col className="bg-secondary bg-opacity-25">
 						<FaceRecognition box={box} imageUrl={imageUrl}/>
 					</Col>
 					<Col sm="1">
@@ -124,8 +124,8 @@ class App extends Component {
 					</Col>
 				</Row>
 				<div className='alertBox' style={{display:'none'}}>
-					<div className="pa3 bg-black ba b--white">
-						<span className='alert-text white'></span>
+					<div>
+						<span className='alert-text'></span>
 					</div>
 				</div>
 			</Container>
