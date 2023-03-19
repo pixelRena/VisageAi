@@ -112,7 +112,7 @@ class App extends Component {
 		return (
 				<Container className="d-flex align-items-center justify-content-center center text-center"
 				style={{height:"100vh"}}>
-				<Row className="shadow d-flex bg-white p-5 h-75 w-100">
+				<Row className="shadow d-flex bg-white p-5 h-md-75 w-100">
 					<Col className="bg-secondary bg-opacity-25">
 						<FaceRecognition box={box} imageUrl={imageUrl}/>
 					</Col>
