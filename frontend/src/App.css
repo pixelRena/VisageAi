@@ -1,6 +1,8 @@
-.link {
-  cursor: pointer;
-}
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+body { box-sizing: border-box; }
+
+.container { font-family: 'Share Tech Mono', monospace; }
 
 .alertBox {
   z-index: 99;
@@ -13,13 +15,13 @@
   width: 70vw;
 }
 
-.footer {
-    text-align: center;
-    position: relative;
-    clear: both;
-    width: 100%;
-    left: 0;
-    bottom: 0;
+#footer {
+  text-align: center;
+  position: absolute;
+  clear: both;
+  width: 100%;
+  left: 0;
+  bottom: 0;
 }
 
 @media (max-width: 800px){

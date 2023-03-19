@@ -11,8 +11,7 @@ const alertMe = (err) => {
 	// set the alertbox back the none to hide it
 	setTimeout(() => {
 		alertBox.style.display = 'none';
-	}, 3000)
-	
+	}, 3000);
 }
 
 export {alertMe};

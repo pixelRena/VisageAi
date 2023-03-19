@@ -2,9 +2,10 @@ import React from 'react';
 
 const Footer = () => {
 	return (
-		<div className='footer'>
-			<p className="text-uppercase black link">© <a 
-				href='https://github.com/pixelRena/facial-recognition-app'
+		<div id='footer'>
+			<p className="text-uppercase link">© <a 
+				className="text-dark"
+				href='https://github.com/pixelRena/Clarifai-Model-Detection'
 				style={{'textDecoration':'none'}}>
 				pixelRena/@github</a> 
 			<script>document.write(new Date().getFullYear())</script>

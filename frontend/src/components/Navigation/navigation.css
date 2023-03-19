@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+#nav {
+    position: absolute;
+    top: 15px;
+    left: 25px;
+    color: white;
+    font-family: 'VT323', monospace;
+    letter-spacing: .3rem;
+    text-shadow: 1px 1px 1px rgb(89, 196, 160);
+    font-weight: bold;
+    font-size: 30px;
+    text-transform: uppercase;
+}

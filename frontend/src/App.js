@@ -2,14 +2,12 @@ import React, {Component} from 'react';
 import './App.css';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import FaceRecognition from './components/FaceRecognition/faceRecognition';
-import SignIn from './components/SignIn/signIn';
-import Register from './components/Register/register';
-import Profile from './components/Profile/profile';
 import Footer from './components/Footer/footer';
 import {alertMe} from './components/Alert/alertBox';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Navigation from "./components/Navigation/navigation";
 
 const initialState = {
 		input: '',
@@ -108,10 +106,11 @@ class App extends Component {
 
 	render() {
 		// Return render based on if the user is signed in and/or going to a different route
-		const {isSignedIn, imageUrl, route, box } = this.state;
+		const { imageUrl, box } = this.state;
 		return (
-				<Container className="d-flex align-items-center justify-content-center center text-center"
-				style={{height:"100vh"}}>
+			<Container className="d-flex align-items-center justify-content-center center text-center"
+			style={{height:"100vh"}}>
+				<Navigation/>
 				<Row className="shadow d-flex bg-white p-5 h-md-75 w-100">
 					<Col className="bg-secondary bg-opacity-25">
 						<FaceRecognition box={box} imageUrl={imageUrl}/>
@@ -123,6 +122,8 @@ class App extends Component {
 						<ImageLinkForm onInputChange={this.onInputChange} onImageSubmit={this.onImageSubmit}/>
 					</Col>
 				</Row>
+				<Footer/>
+
 				<div className='alertBox' style={{display:'none'}}>
 					<div>
 						<span className='alert-text'></span>
