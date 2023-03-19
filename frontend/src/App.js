@@ -76,7 +76,7 @@ class App extends Component {
 	onImageSubmit = () => {
 		// send the information gathered from the calculation and the input
 		this.setState({imageUrl: this.state.input})
-		fetch('http://localhost:3001/imageurl', {
+		fetch('/imageurl', {
 			method: 'POST',
 			headers: {'Content-Type':'application/json'},
 			body: JSON.stringify({input: this.state.input})
