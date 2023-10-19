@@ -9,7 +9,7 @@ import FormLabel from "react-bootstrap/FormLabel";
 
 const ImageLinkForm = ({ onInputChange, onImageSubmit }) => {
   return (
-    <div>
+    <div role="contentinfo" aria-label="Instructions on how to use Visage Ai">
       <text className="fs-3">Analyze Faces In Real-Time</text>
       <Row className="text-start">
         <p className="fs-6 fw-medium fst-italic form-text">How does it work?</p>
