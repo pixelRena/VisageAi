@@ -10,7 +10,7 @@ import FormLabel from "react-bootstrap/FormLabel";
 const ImageLinkForm = ({ onInputChange, onImageSubmit }) => {
   return (
     <div>
-      <h4>Analyze Faces In Real-Time</h4>
+      <text className="fs-3">Analyze Faces In Real-Time</text>
       <Row className="text-start">
         <p className="fs-6 fw-medium fst-italic form-text">How does it work?</p>
       </Row>
