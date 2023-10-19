@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import Row from "react-bootstrap/Row";
+import FormLabel from "react-bootstrap/FormLabel";
 
 const ImageLinkForm = ({ onInputChange, onImageSubmit }) => {
   return (
@@ -26,7 +27,14 @@ const ImageLinkForm = ({ onInputChange, onImageSubmit }) => {
       </Row>
       <Row className="center">
         <InputGroup className="w-100 center">
-          <Form.Control onChange={onInputChange} />
+          <Form.Label htmlFor="image-url" hidden>
+            URL
+          </Form.Label>
+          <Form.Control
+            id="image-url"
+            onChange={onInputChange}
+            placeholder="Image URL"
+          />
           <Button
             variant="primary"
             size="md"
@@ -49,13 +57,13 @@ const ImageLinkForm = ({ onInputChange, onImageSubmit }) => {
           Still not working?
         </p>
         <p>
-          Please submit a{" "}
+          Please submit a
           <a
             href="https://github.com/pixelRena/Clarifai-Model-Detection/issues"
             className="text-primary text-underline fw-bold"
           >
             issue
-          </a>{" "}
+          </a>
           request and the url you tried to use so that I can further
           troubleshoot. Thanks! 😊
         </p>
