@@ -57,7 +57,7 @@ const ImageLinkForm = ({ onInputChange, onImageSubmit }) => {
           Still not working?
         </p>
         <p>
-          Please submit a
+          Please submit a{" "}
           <a
             href="https://github.com/pixelRena/Clarifai-Model-Detection/issues"
             className="text-primary text-underline fw-bold"
