@@ -61,7 +61,7 @@ const ImageLinkForm = ({ onInputChange, onImageSubmit }) => {
             className="text-primary text-underline fw-bold"
           >
             issue
-          </a>
+          </a>{" "}
           request and the url you tried to use so that I can further
           troubleshoot. Thanks! 😊
         </p>
